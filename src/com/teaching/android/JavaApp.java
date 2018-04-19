@@ -7,13 +7,26 @@ import java.util.Scanner;
  * Empty Java App for teaching purposes.
  */
 public class JavaApp {
-
+/*  EJERCICIO PRIMERO CON PERSONA
     public static void main(String[] args) {
+        // new personal ("messi", "100")
+        persona p1 = new persona("Messi", 100f);
+        persona p2 = new persona("Cristiano", 500f);
+        p1.pagar(p2, 400f);
+        String nombre1 = p1.getNombre();
+        System.out.println(nombre1 + "tiene" + p1.getDinero() + "€");
+*/
+//ejercicio segundo con punto
+        public static void main(String[] args) {
+        punto p1 = new punto(2, 4);
+        punto p2 = new punto(3, 5);
+        double distancia = p1.distancia(3, 5);
+        System.out.println(distancia);
+        double distancia2 = p1.distancia(p2);
+        System.out.println(distancia2);
 
-        for (int i = 0; i < 40; i = i + 2) {
-            System.out.println(new Random().nextInt(40));
-        }
-GuessTheNumber();
+        System.out.println(p1);
+
     }
 
 
@@ -25,36 +38,26 @@ GuessTheNumber();
         System.out.print("Estoy pensando en un número del 1 al 10. Puedes adivinarlo?");
 
         Scanner keyboard = new Scanner(System.in);
-        int valor = keyboard.nextInt();
+        for (int i = 0; i < 3; i++) {
+            int valor = keyboard.nextInt();
 
-        if (valor == random) {
-            System.out.print("Correcto!");
-            System.exit(0);
-        } else if (valor > random) {
-            System.out.println("Más pequeño! Prueba otra vez:");
-        } else {
-            System.out.println("Más alto! Prueba otra vez:");
-        }
+            if (valor == random) {
+                System.out.print("Correcto!");
+                System.exit(0);
+            }
 
-        valor = keyboard.nextInt();
-        if (valor == random) {
-            System.out.println("Correcto!");
-            System.exit(0);
-        } else if (valor > random) {
-            System.out.println("Más pequeño! Prueba otra vez:");
-        } else {
-            System.out.println("Más alto! Prueba otra vez:");
-        }
-
-        valor = keyboard.nextInt();
-        if (valor == random) {
-            System.out.println("Correcto!");
-            System.exit(0);
+            // Ask user to try again
+            if (i < 2) {
+                if (valor > random) {
+                    System.out.println("Más pequeño! Prueba otra vez:");
+                } else {
+                    System.out.println("Más alto! Prueba otra vez:");
+                }
+            }
         }
 
         System.out.println("Has perdido, el número correcto es " + random);
     }
-
 
 }
 
